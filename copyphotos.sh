@@ -116,4 +116,9 @@ fi
 [ $sjpgcopy -eq 0 ] && rm -f /photos/scottpixel/Camera/*.jpg
 [ $smpcopy -eq 0 ] && rm -f /photos/scottpixel/Camera/*.mp4
 
+if [ $sjpgcopy -eq 1 ] || [ $smpcopy -eq 1 ]
+then
+        printf '%s\n' "${fout[@]}" | mail -s "Photo copy" myemail@email.com
+fi
+
 exit 0
