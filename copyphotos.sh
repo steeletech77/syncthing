@@ -72,9 +72,17 @@ then
     fout+=("")
 
     for f in *.jpg; do
+
+    	# Pixel format
         m="${f:8:2}"
         d="${f:10:2}"
         y="${f:4:4}"
+
+        # Samsung format
+	# m="${f:4:2}"
+        # d="${f:6:2}"
+        # y="${f:0:4}"
+	
         get_month $m
         dir="$mdir/$y $m $month"
         if [ $curm != $m ]
@@ -96,15 +104,17 @@ then
     fout+=("")
 
     for f in *.mp4; do
+    
         # Pixel format
         m="${f:8:2}"
         d="${f:10:2}"
         y="${f:4:4}"
         
         # Samsung format
-	m="${f:4:2}"
-        d="${f:6:2}"
-        y="${f:0:4}"
+	# m="${f:4:2}"
+        # d="${f:6:2}"
+        # y="${f:0:4}"
+	
         get_month $m
         dir="$mdir/$y $m $month"
     
